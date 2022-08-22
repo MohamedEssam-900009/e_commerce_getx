@@ -1,5 +1,7 @@
-import 'package:e_commerce_getx/view/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,11 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'E-Commerce Get-X',
-      home: WelcomeScreen(),
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      initialRoute: AppRoutes.welcome,
+      getPages: AppRoutes.routes,
     );
   }
 }
-
