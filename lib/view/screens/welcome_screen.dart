@@ -1,4 +1,3 @@
-
 import '../../routes/routes.dart';
 
 import 'package:get/get.dart';
@@ -125,7 +124,7 @@ class WelcomeScreen extends StatelessWidget {
                         fontSize: 18.0,
                         fontWeight: FontWeight.normal,
                         color: Colors.white,
-                        textDecoration: TextDecoration.underline,
+                        underline: TextDecoration.underline,
                       ),
                     ),
                   ],

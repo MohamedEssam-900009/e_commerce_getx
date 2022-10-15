@@ -1,5 +1,8 @@
-import 'package:e_commerce_getx/utils/theme.dart';
-import 'package:e_commerce_getx/view/widgets/text_utils.dart';
+import '../../../utils/theme.dart';
+import '../../widgets/auth/auth_button.dart';
+import '../../widgets/auth/check_widget.dart';
+import '../../widgets/auth/container_under.dart';
+import '../../widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/auth/auth_text_form_field.dart';
@@ -83,11 +86,24 @@ class SignUpScreen extends StatelessWidget {
                       hintText: 'Password',
                     ),
                     const SizedBox(
-                      height: 20.0,
+                      height: 50.0,
+                    ),
+                    const CheckWidget(),
+                    const SizedBox(
+                      height: 50.0,
+                    ),
+                    AuthButton(
+                      text: 'SIGN UP',
+                      onPressed: () {},
                     )
                   ],
                 ),
               ),
+            ),
+            ContainerUnder(
+              text: 'Already have an Account? ',
+              textType: 'Log in',
+              onPressed: () {},
             )
           ],
         ),
