@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 import '../../../utils/theme.dart';
 import '../../widgets/auth/auth_button.dart';
 import '../../widgets/auth/check_widget.dart';
@@ -17,9 +19,9 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
         elevation: 0.0,
       ),
       body: SingleChildScrollView(
@@ -34,21 +36,21 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
-                      children: const [
+                      children: [
                         TextUtils(
                           text: 'SIGN',
                           fontSize: 28.0,
                           fontWeight: FontWeight.w500,
-                          color: mainColor,
+                          color: Get.isDarkMode ? mainColor : pinkClr,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 3.0,
                         ),
                         TextUtils(
                           text: 'UP',
                           fontSize: 28.0,
                           fontWeight: FontWeight.w500,
-                          color: Colors.black,
+                          color: Get.isDarkMode ? Colors.black : Colors.white,
                         ),
                       ],
                     ),
@@ -59,7 +61,13 @@ class SignUpScreen extends StatelessWidget {
                       controller: nameController,
                       obscureText: false,
                       validator: () {},
-                      prefixIcon: Image.asset('assets/images/user.png'),
+                      prefixIcon: Get.isDarkMode
+                          ? Image.asset('assets/images/user.png')
+                          : const Icon(
+                              Icons.person,
+                              color: pinkClr,
+                              size: 30,
+                            ),
                       suffixIcon: const Text(''),
                       hintText: 'User Name',
                     ),
@@ -70,7 +78,13 @@ class SignUpScreen extends StatelessWidget {
                       controller: emailController,
                       obscureText: false,
                       validator: () {},
-                      prefixIcon: Image.asset('assets/images/email.png'),
+                      prefixIcon: Get.isDarkMode
+                          ? Image.asset('assets/images/email.png')
+                          : const Icon(
+                              Icons.email,
+                              color: pinkClr,
+                              size: 30.0,
+                            ),
                       suffixIcon: const Text(''),
                       hintText: 'E-mail',
                     ),
@@ -81,7 +95,13 @@ class SignUpScreen extends StatelessWidget {
                       controller: passwordController,
                       obscureText: true,
                       validator: () {},
-                      prefixIcon: Image.asset('assets/images/lock.png'),
+                      prefixIcon: Get.isDarkMode
+                          ? Image.asset('assets/images/lock.png')
+                          : const Icon(
+                              Icons.lock,
+                              color: pinkClr,
+                              size: 30,
+                            ),
                       suffixIcon: const Text(''),
                       hintText: 'Password',
                     ),

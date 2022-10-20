@@ -1,6 +1,7 @@
-import 'package:e_commerce_getx/utils/theme.dart';
-import 'package:e_commerce_getx/view/widgets/text_utils.dart';
+import '../../../utils/theme.dart';
+import '../text_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AuthButton extends StatelessWidget {
   final String text;
@@ -20,7 +21,7 @@ class AuthButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: mainColor,
+          backgroundColor:Get.isDarkMode? mainColor:pinkClr,
           maximumSize: const Size(360, 50),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
