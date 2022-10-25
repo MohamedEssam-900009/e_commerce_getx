@@ -8,14 +8,15 @@ class AuthTextFormField extends StatelessWidget {
   final Widget suffixIcon;
   final String hintText;
 
-  const AuthTextFormField(
-      {super.key,
-      required this.controller,
-      required this.obscureText,
-      required this.validator,
-      required this.prefixIcon,
-      required this.suffixIcon,
-      required this.hintText});
+  const AuthTextFormField({
+    super.key,
+    required this.controller,
+    required this.obscureText,
+    required this.validator,
+    required this.prefixIcon,
+    required this.suffixIcon,
+    required this.hintText,
+  });
 
   @override
   Widget build(BuildContext context) {
