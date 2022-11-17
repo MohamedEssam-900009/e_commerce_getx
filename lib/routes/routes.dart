@@ -1,3 +1,4 @@
+import '../logic/binding/auth_binding.dart';
 import 'package:get/get.dart';
 
 import '../view/screens/auth/login_screen.dart';
@@ -21,6 +22,7 @@ class AppRoutes {
     GetPage(
       name: Routes.signUpScreen,
       page: () =>  SignUpScreen(),
+      binding: AuthBinding()
     ),
   ];
 }

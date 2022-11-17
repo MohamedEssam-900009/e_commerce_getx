@@ -1,14 +1,14 @@
-import 'package:e_commerce_getx/utils/my_string.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../logic/controller/auth_controller.dart';
+import '../../../utils/my_string.dart';
 import '../../../utils/theme.dart';
 import '../../widgets/auth/auth_button.dart';
+import '../../widgets/auth/auth_text_form_field.dart';
 import '../../widgets/auth/check_widget.dart';
 import '../../widgets/auth/container_under.dart';
 import '../../widgets/text_utils.dart';
-import 'package:flutter/material.dart';
-
-import '../../widgets/auth/auth_text_form_field.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
@@ -18,6 +18,8 @@ class SignUpScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  final controller = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -109,30 +111,47 @@ class SignUpScreen extends StatelessWidget {
                       const SizedBox(
                         height: 20.0,
                       ),
-                      AuthTextFormField(
-                        controller: passwordController,
-                        obscureText: true,
-                        validator: (value) {
-                          if (value.toString().length < 6) {
-                            return 'Password should be longer or equal to 6 characters';
-                          } else {
-                            return null;
-                          }
+                      GetBuilder<AuthController>(
+                        builder: (_) {
+                          return AuthTextFormField(
+                            controller: passwordController,
+                            obscureText: controller.isVisibilty ? false : true,
+                            validator: (value) {
+                              if (value.toString().length < 6) {
+                                return 'Password should be longer or equal to 6 characters';
+                              } else {
+                                return null;
+                              }
+                            },
+                            prefixIcon: Get.isDarkMode
+                                ? Image.asset('assets/images/lock.png')
+                                : const Icon(
+                                    Icons.lock,
+                                    color: pinkClr,
+                                    size: 30,
+                                  ),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                controller.visibility();
+                              },
+                              icon: controller.isVisibilty
+                                  ? const Icon(
+                                      Icons.visibility,
+                                      color: Colors.black,
+                                    )
+                                  : const Icon(
+                                      Icons.visibility_off,
+                                      color: Colors.black,
+                                    ),
+                            ),
+                            hintText: 'Password',
+                          );
                         },
-                        prefixIcon: Get.isDarkMode
-                            ? Image.asset('assets/images/lock.png')
-                            : const Icon(
-                                Icons.lock,
-                                color: pinkClr,
-                                size: 30,
-                              ),
-                        suffixIcon: const Text(''),
-                        hintText: 'Password',
                       ),
                       const SizedBox(
                         height: 50.0,
                       ),
-                      const CheckWidget(),
+                      CheckWidget(),
                       const SizedBox(
                         height: 50.0,
                       ),
@@ -148,7 +167,7 @@ class SignUpScreen extends StatelessWidget {
                 text: 'Already have an Account? ',
                 textType: 'Log in',
                 onPressed: () {},
-              )
+              ),
             ],
           ),
         ),
