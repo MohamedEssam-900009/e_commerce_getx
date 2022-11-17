@@ -1,10 +1,9 @@
-import '../../routes/routes.dart';
-
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../routes/routes.dart';
 import '../../utils/theme.dart';
 import '../widgets/text_utils.dart';
-import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

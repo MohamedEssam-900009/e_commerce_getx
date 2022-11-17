@@ -1,5 +1,5 @@
-import 'package:e_commerce_getx/utils/my_string.dart';
-import 'package:e_commerce_getx/utils/theme.dart';
+import '../../../utils/my_string.dart';
+import '../../../utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -128,7 +128,9 @@ class LoginScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.toNamed(Routes.forgotPasswordScreen);
+                          },
                           child: TextUtils(
                             text: 'Forgot Password?',
                             fontSize: 14.0,

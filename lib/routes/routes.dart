@@ -1,3 +1,5 @@
+import '../view/screens/auth/forgot_password_screen.dart';
+
 import '../logic/binding/auth_binding.dart';
 import 'package:get/get.dart';
 
@@ -25,6 +27,11 @@ class AppRoutes {
       page: () => SignUpScreen(),
       binding: AuthBinding(),
     ),
+    GetPage(
+      name: Routes.forgotPasswordScreen,
+      page: () => ForgotPasswordScreen(),
+      binding: AuthBinding(),
+    ),
   ];
 }
 
@@ -32,4 +39,5 @@ class Routes {
   static const welcomeScreen = '/welcomeScreen';
   static const loginScreen = '/loginScreen';
   static const signUpScreen = '/signUpScreen';
+  static const forgotPasswordScreen = '/forgotPasswordScreen';
 }
