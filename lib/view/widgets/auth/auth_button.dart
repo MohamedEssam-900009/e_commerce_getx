@@ -33,6 +33,7 @@ class AuthButton extends StatelessWidget {
           fontSize: 18.0,
           fontWeight: FontWeight.bold,
           color: Colors.white,
+          underline: TextDecoration.none,
         ),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:e_commerce_getx/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -49,6 +50,7 @@ class SignUpScreen extends StatelessWidget {
                             fontSize: 28.0,
                             fontWeight: FontWeight.w500,
                             color: Get.isDarkMode ? mainColor : pinkClr,
+                            underline: TextDecoration.none,
                           ),
                           const SizedBox(
                             width: 3.0,
@@ -58,6 +60,7 @@ class SignUpScreen extends StatelessWidget {
                             fontSize: 28.0,
                             fontWeight: FontWeight.w500,
                             color: Get.isDarkMode ? Colors.black : Colors.white,
+                            underline: TextDecoration.none,
                           ),
                         ],
                       ),
@@ -166,7 +169,9 @@ class SignUpScreen extends StatelessWidget {
               ContainerUnder(
                 text: 'Already have an Account? ',
                 textType: 'Log in',
-                onPressed: () {},
+                onPressed: () {
+                  Get.offNamed(Routes.loginScreen);
+                },
               ),
             ],
           ),

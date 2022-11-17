@@ -46,6 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 35.0,
                       fontWeight: FontWeight.bold,
+                      underline: TextDecoration.none,
                     ),
                   ),
                 ),
@@ -67,6 +68,7 @@ class WelcomeScreen extends StatelessWidget {
                         color: mainColor,
                         fontSize: 35.0,
                         fontWeight: FontWeight.bold,
+                        underline: TextDecoration.none,
                       ),
                       SizedBox(
                         width: 7.0,
@@ -76,6 +78,7 @@ class WelcomeScreen extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 35.0,
                         fontWeight: FontWeight.bold,
+                        underline: TextDecoration.none,
                       ),
                     ],
                   ),
@@ -102,6 +105,7 @@ class WelcomeScreen extends StatelessWidget {
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
+                    underline: TextDecoration.none,
                   ),
                 ),
                 const SizedBox(
@@ -115,6 +119,7 @@ class WelcomeScreen extends StatelessWidget {
                       fontSize: 18.0,
                       fontWeight: FontWeight.normal,
                       color: Colors.white,
+                      underline: TextDecoration.none,
                     ),
                     TextButton(
                       onPressed: () {

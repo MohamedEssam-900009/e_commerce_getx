@@ -17,12 +17,13 @@ class AppRoutes {
     ),
     GetPage(
       name: Routes.loginScreen,
-      page: () => const LoginScreen(),
+      page: () =>  LoginScreen(),
+      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.signUpScreen,
-      page: () =>  SignUpScreen(),
-      binding: AuthBinding()
+      page: () => SignUpScreen(),
+      binding: AuthBinding(),
     ),
   ];
 }

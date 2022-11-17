@@ -10,7 +10,7 @@ class AuthController extends GetxController {
     update();
   }
 
-  void checkBox(){
+  void checkBox() {
     isCheckBox = !isCheckBox;
     update();
   }

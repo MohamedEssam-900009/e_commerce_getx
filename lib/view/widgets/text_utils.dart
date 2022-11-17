@@ -6,7 +6,7 @@ class TextUtils extends StatelessWidget {
   final Color color;
   final double fontSize;
   final FontWeight fontWeight;
-  final TextDecoration? underline;
+  final TextDecoration underline;
 
   const TextUtils({
     Key? key,
@@ -14,7 +14,7 @@ class TextUtils extends StatelessWidget {
     required this.fontSize,
     required this.fontWeight,
     required this.color,
-    this.underline
+    required this.underline
   }) : super(key: key);
 
   @override
